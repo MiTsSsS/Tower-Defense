@@ -25,7 +25,7 @@ public class BuildingBlueprint : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, mask)) {
-            //Debug.DrawRay(Camera.main.transform.position, Input.mousePosition * 10, Color.yellow);
+            Debug.DrawRay(Camera.main.transform.position, Input.mousePosition * 10, Color.yellow);
             Debug.DrawLine(ray.origin, hit.point);
             if (!hit.transform.tag.Equals("Building")) {
                 placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
