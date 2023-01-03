@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2770822281192215813}
   - component: {fileID: 2770822281192215812}
   - component: {fileID: 2770822281192215815}
-  m_Layer: 0
-  m_Name: Bullet
-  m_TagString: Untagged
+  - component: {fileID: 5827768619276944039}
+  m_Layer: 3
+  m_Name: TowerBullet
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,3 +99,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5827768619276944039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770822281192215814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f586717fe32a6b74e9dd195ca83fd495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitSpawnPrefab: {fileID: 0}

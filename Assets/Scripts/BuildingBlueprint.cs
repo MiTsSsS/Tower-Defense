@@ -14,7 +14,7 @@ public class BuildingBlueprint : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 50000.0f, mask)) {
+        if (Physics.Raycast(ray, out hit, 500000.0f, mask)) {
             transform.position = hit.point;
         }
     }
@@ -24,17 +24,17 @@ public class BuildingBlueprint : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, mask)) {
-            Debug.DrawRay(Camera.main.transform.position, Input.mousePosition * 10, Color.yellow);
-            Debug.DrawLine(ray.origin, hit.point);
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)) {
+            Debug.DrawLine(ray.origin, hit.point, Color.red);
+
             if (!hit.transform.tag.Equals("Building")) {
                 placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 transform.position = placePoint;
             }
         }
 
-        if (Input.GetMouseButtonDown(0)) {              
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
+        if (Input.GetMouseButtonDown(0)) {
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)) {
                 placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 Instantiate(prefab, placePoint, transform.rotation);
                 Destroy(gameObject);
