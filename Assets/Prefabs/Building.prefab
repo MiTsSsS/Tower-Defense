@@ -48,7 +48,7 @@ MonoBehaviour:
   prefab: {fileID: 1332438998537278449}
   mask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 119
 --- !u!1001 &206270373647262133
 PrefabInstance:
   m_ObjectHideFlags: 0
