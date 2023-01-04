@@ -19,8 +19,8 @@ public class BuildingController : MonoBehaviour
     public bool rotateTowardsTarget;
 
     [Header("Combat")]
-    public float attackRate;
     private float timeSinceLastAttack;
+    public float attackRate;
     public GameObject projectilePrefab;
     public Transform projectileSpawnPos;
 
@@ -30,14 +30,22 @@ public class BuildingController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Time.time - timeSinceLastAttack > attackRate) {
-            timeSinceLastAttack = Time.time;
+       if (timeSinceLastAttack == 0) {
             currentEnemy = getEnemy();
 
             if (currentEnemy != null) {
                 attack();
+                timeSinceLastAttack = attackRate;
             }
        }
+
+        else if (timeSinceLastAttack >= 0) {
+            timeSinceLastAttack -= Time.deltaTime;
+
+            if (timeSinceLastAttack <= 0) {
+                timeSinceLastAttack = 0;
+            }
+        }
     }
 
     private Enemy getEnemy() {

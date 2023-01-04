@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2057250514697596352}
   - component: {fileID: 1324757280994720232}
   m_Layer: 3
-  m_Name: Fast Tower
+  m_Name: Tower
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,18 +111,6 @@ PrefabInstance:
     - target: {fileID: 6028994387082495672, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_TagString
       value: Building
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986260155668057768, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
-      propertyPath: attackRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986260155668057768, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
-      propertyPath: projectileSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8986260155668057768, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
-      propertyPath: projectileDamage
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
