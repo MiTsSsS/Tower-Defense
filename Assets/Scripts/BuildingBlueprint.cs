@@ -35,9 +35,16 @@ public class BuildingBlueprint : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0)) {
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)) {
-                placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                Instantiate(prefab, placePoint, transform.rotation);
-                Destroy(gameObject);
+                BuildingController bc = prefab.GetComponentInChildren<BuildingController>();
+
+                if (GameManager.instance.validateBuildingCost(bc.cost)) { 
+                    placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    Instantiate(prefab, placePoint, transform.rotation);
+
+                    bc.OnBuildingPlaced();
+
+                    Destroy(gameObject);     
+                }
             }
         }
     }

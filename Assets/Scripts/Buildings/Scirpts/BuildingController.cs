@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +25,7 @@ public class BuildingController : MonoBehaviour
 
     public int projectileDamage;
     public float projectileSpeed;
+    public int cost;
 
     // Update is called once per frame
     void Update()
@@ -59,6 +59,10 @@ public class BuildingController : MonoBehaviour
             return enemiesInRange[0];
         }
 
+        else {
+            return enemiesInRange[0];
+        }
+
         switch(targetPriority) {
             case TowerTargetPriority.Close:
                 return enemiesInRange[0];
@@ -75,6 +79,10 @@ public class BuildingController : MonoBehaviour
 
         GameObject proj = Instantiate(projectilePrefab, projectileSpawnPos.position, Quaternion.identity);
         proj.GetComponent<Projectile>().initialize(currentEnemy, projectileDamage, projectileSpeed);
+    }
+
+    public void OnBuildingPlaced() {
+        GameManager.instance.onTowerPlaced();
     }
     
     private void OnTriggerEnter(Collider other) {
