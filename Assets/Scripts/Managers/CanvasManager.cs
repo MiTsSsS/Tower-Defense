@@ -12,9 +12,7 @@ public class CanvasManager : MonoBehaviour
         goldText.GetComponent<TextMeshProUGUI>().text = GameManager.instance.gold.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void updateGoldText(int g) {
+        goldText.GetComponent<TextMeshProUGUI>().text = g.ToString();
     }
 }

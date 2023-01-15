@@ -11,16 +11,19 @@ public class TowerManager : MonoBehaviour
         Heavy
     }
 
-    private GameObject selectedTower;
+    public BuildingBlueprint buildingBlueprint;
+    
     private bool canShowPreview = true;
 
+    public GameObject towerPreview;
     public GameObject normalTower;
     public GameObject heavyTower;
     public GameObject fastTower;
+    private GameObject selectedTower;
 
     private void Update() {
         if(Input.GetMouseButtonDown(1)) {
-            if(selectedTower != null) {
+            if(buildingBlueprint.towerPreview != null) {
                 deselectTower();
             }
         }
@@ -42,22 +45,26 @@ public class TowerManager : MonoBehaviour
     }
 
     public void createTowerPreview(int type) {
-         GameObject selectedTowerPreview = getTowerByType((TowerType)type);
+        GameObject selectedTowerPreview = getTowerByType((TowerType)type);
+        buildingBlueprint.setSelectedTower(selectedTowerPreview);
+
+        Debug.Log(canShowPreview);
 
         if (selectedTowerPreview != null && canShowPreview) {
-            selectedTower = Instantiate(selectedTowerPreview, transform.position, Quaternion.identity);
+            buildingBlueprint.towerPreview = Instantiate(towerPreview, transform.position, Quaternion.identity);
             canShowPreview = false;
         }
     }
 
     public void OnTowerPlaced() {
-        selectedTower = null;
+        buildingBlueprint.towerPreview = null;
         canShowPreview = true;
     }
 
     public void deselectTower() {
-        Destroy(selectedTower);
+        Destroy(buildingBlueprint.towerPreview);
         
         selectedTower = null;
+        canShowPreview = true;
     }
 }

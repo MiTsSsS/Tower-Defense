@@ -6,7 +6,8 @@ public class BuildingBlueprint : MonoBehaviour
 {
     RaycastHit hit;
     Vector3 placePoint;
-    public GameObject prefab;
+    public GameObject towerPreview;
+    public GameObject selectedTower;
     public LayerMask mask;
 
     // Start is called before the first frame update
@@ -14,7 +15,7 @@ public class BuildingBlueprint : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 500000.0f, mask)) {
+        if (Physics.Raycast(ray, out hit, 500000.0f, mask) && towerPreview != null) {
             transform.position = hit.point;
         }
     }
@@ -24,28 +25,35 @@ public class BuildingBlueprint : MonoBehaviour
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)) {
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)
+            && towerPreview != null) {
             Debug.DrawLine(ray.origin, hit.point, Color.red);
 
             if (!hit.transform.tag.Equals("Building")) {
                 placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                transform.position = placePoint;
+                towerPreview.transform.position = placePoint;
             }
         }
 
         if (Input.GetMouseButtonDown(0)) {
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)) {
-                BuildingController bc = prefab.GetComponentInChildren<BuildingController>();
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity, mask, QueryTriggerInteraction.Ignore)
+               && selectedTower != null) {
+                BuildingController bc = selectedTower.GetComponentInChildren<BuildingController>();
 
                 if (GameManager.instance.validateBuildingCost(bc.cost)) { 
                     placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                    Instantiate(prefab, placePoint, transform.rotation);
+                    Instantiate(selectedTower, placePoint, transform.rotation);
 
                     bc.OnBuildingPlaced();
-
-                    Destroy(gameObject);     
+                
+                    Destroy(towerPreview);
+                    selectedTower = null;
                 }
             }
         }
+    }
+
+    public void setSelectedTower(GameObject st) {
+        selectedTower = st;
     }
 }

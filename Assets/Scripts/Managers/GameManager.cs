@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public CanvasManager canvasManager;
     public int gold;
 
     [SerializeField]
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour
 
     private void Start() {
         instance = this;
+        setGold(gold);
+
     }
 
     public bool validateBuildingCost(int buildingCost) {
@@ -29,9 +32,12 @@ public class GameManager : MonoBehaviour
     }
 
     private void spendGold(int g) {
-        gold -= g;
-        
-        
+        setGold(gold - g);
+    }
+
+    void setGold(int g) {
+        gold = g;
+        canvasManager.updateGoldText(gold);
     }
 
     public void onTowerPlaced() {

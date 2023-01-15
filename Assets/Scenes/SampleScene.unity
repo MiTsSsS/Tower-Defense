@@ -167,7 +167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781d0017c024f454b94dfdfd847f3348, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  canvasManager: {fileID: 362317910}
+  gold: 50
+  towerManager: {fileID: 1047825660}
 --- !u!1 &153540261
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -417,6 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a84b348f54db24fbf307db9bb56dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goldText: {fileID: 153540261}
 --- !u!1 &374701614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,6 +1300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1047825659}
   - component: {fileID: 1047825660}
+  - component: {fileID: 1047825661}
   m_Layer: 0
   m_Name: TowerManager
   m_TagString: Untagged
@@ -1331,9 +1335,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ce9960298efce418ad9beb433c61d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildingBlueprint: {fileID: 1047825661}
+  towerPreview: {fileID: 1805557573296722737, guid: afdc93e72adaa7d46865ac527cd05fb8, type: 3}
   normalTower: {fileID: 4015240441135119641, guid: a24d66a075abd7645aea11d4dd64e356, type: 3}
   heavyTower: {fileID: 8723864171500387402, guid: 76e4657a3bb80824c94bd6e18a4ed63d, type: 3}
   fastTower: {fileID: 5982464471084245548, guid: 149a82bc25aa59145b7c53f1da6e48ee, type: 3}
+--- !u!114 &1047825661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047825658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2ea3562597e6840a149a36ff2026a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPreview: {fileID: 0}
+  selectedTower: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!1 &1066935520
 GameObject:
   m_ObjectHideFlags: 0
