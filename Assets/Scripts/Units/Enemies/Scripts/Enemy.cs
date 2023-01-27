@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -10,7 +11,13 @@ public class Enemy : MonoBehaviour
         m_hitPoints -= damage;
         Debug.Log(m_hitPoints);
         if(m_hitPoints <= 0) {
-            Destroy(gameObject);
+            onDeath();
         }
    }
+
+    private void onDeath() {
+        GameManager.instance.gainGold(10);
+        Destroy(gameObject);
+        
+    }
 }

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private void Start() {
         instance = this;
         setGold(gold);
-
+        InvokeRepeating("gainGoldRepeating", 0, 2f);
     }
 
     public bool validateBuildingCost(int buildingCost) {
@@ -35,7 +35,15 @@ public class GameManager : MonoBehaviour
         setGold(gold - g);
     }
 
-    void setGold(int g) {
+    private void gainGoldRepeating() {
+        setGold(gold + 2);
+    }
+
+    public void gainGold(int g) {
+        setGold(gold + g);
+    }
+
+    public void setGold(int g) {
         gold = g;
         canvasManager.updateGoldText(gold);
     }

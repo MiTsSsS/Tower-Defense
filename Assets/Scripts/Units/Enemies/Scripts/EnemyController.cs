@@ -12,10 +12,4 @@ public class EnemyController : MonoBehaviour
     {
        agent.SetDestination(destination.position); 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -19,7 +19,6 @@ public class TowerManager : MonoBehaviour
     public GameObject normalTower;
     public GameObject heavyTower;
     public GameObject fastTower;
-    private GameObject selectedTower;
 
     private void Update() {
         if(Input.GetMouseButtonDown(1)) {
@@ -57,14 +56,11 @@ public class TowerManager : MonoBehaviour
     }
 
     public void OnTowerPlaced() {
-        buildingBlueprint.towerPreview = null;
         canShowPreview = true;
     }
 
     public void deselectTower() {
         Destroy(buildingBlueprint.towerPreview);
-        
-        selectedTower = null;
         canShowPreview = true;
     }
 }

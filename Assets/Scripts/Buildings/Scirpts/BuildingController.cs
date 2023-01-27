@@ -62,13 +62,14 @@ public class BuildingController : MonoBehaviour
         else {
             return enemiesInRange[0];
         }
-
-        switch(targetPriority) {
+        
+        //For later addition of targeting priority
+        /*switch(targetPriority) {
             case TowerTargetPriority.Close:
                 return enemiesInRange[0];
-        }
+        }*/
         
-        return null;
+        //return null;
     }
 
     private void attack() {
