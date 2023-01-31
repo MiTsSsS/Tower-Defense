@@ -47,9 +47,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 1385459910883980696, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e77b003cd8771304abfc74dd93c9f934, type: 2}
+    - target: {fileID: 2695884601718448221, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.678
+      objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -57,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -95,6 +115,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3543042084522820013, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5164419448208583070, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 31e91474d696aac42a8e41c3cba06388, type: 3}
     - target: {fileID: 6028994387082495672, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_TagString
       value: Building
