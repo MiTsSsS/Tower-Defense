@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2057250514697596352}
-  - component: {fileID: 4071982816672596165}
   m_Layer: 3
   m_Name: Tower
   m_TagString: Building
@@ -33,22 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &4071982816672596165
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1805557573296722737}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &206270373647262133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -106,6 +89,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468901722815586617, guid: 7974c55c188634949aa872714b6fd79a, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6028994387082495672, guid: 7974c55c188634949aa872714b6fd79a, type: 3}

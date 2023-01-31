@@ -11,8 +11,6 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_agent = GetComponent<NavMeshAgent>();
-
         GameObject pointB = GameObject.Find("Point B");
         m_destination = pointB.transform;
 

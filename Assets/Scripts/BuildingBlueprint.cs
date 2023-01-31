@@ -31,7 +31,7 @@ public class BuildingBlueprint : MonoBehaviour
 
             if (!hit.transform.tag.Equals("Building")) {
                 placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                towerPreview.transform.position = placePoint;
+                towerPreview.transform.position = hit.point;
             }
         }
 
