@@ -42,8 +42,10 @@ public class BuildingBlueprint : MonoBehaviour
 
                 if (GameManager.instance.validateBuildingCost(bc.cost)) { 
                     placePoint = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                    Instantiate(selectedTower, placePoint, transform.rotation);
 
+                    GameObject tower = Instantiate(selectedTower, placePoint, transform.rotation);
+
+                    GameManager.instance.addTower(tower);
                     bc.OnBuildingPlaced();
                 
                     Destroy(towerPreview);

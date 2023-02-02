@@ -1,24 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public CanvasManager canvasManager;
-    public int gold;
 
     [SerializeField]
-    private TowerManager towerManager;
+    private int startingGold;
+    [SerializeField]
+    private CanvasManager m_canvasManager;
+    [SerializeField]
+    private TowerManager m_towerManager;
+    [SerializeField]
+    private UnitManager m_unitManager;
+
+    private int m_arrivalScore = 0;
+    private int m_gold;
 
     private void Start() {
         instance = this;
-        setGold(gold);
+        setGold(startingGold);
         InvokeRepeating("gainGoldRepeating", 0, 2f);
     }
 
     public bool validateBuildingCost(int buildingCost) {
-        bool canPlace = gold >= buildingCost;
+        bool canPlace = m_gold >= buildingCost;
 
         if (canPlace) {
             spendGold(buildingCost);    
@@ -32,23 +40,79 @@ public class GameManager : MonoBehaviour
     }
 
     private void spendGold(int g) {
-        setGold(gold - g);
+        setGold(m_gold - g);
     }
 
     private void gainGoldRepeating() {
-        setGold(gold + 2);
+        setGold(m_gold + 2);
     }
 
     public void gainGold(int g) {
-        setGold(gold + g);
+        setGold(m_gold + g);
     }
 
     public void setGold(int g) {
-        gold = g;
-        canvasManager.updateGoldText(gold);
+        m_gold = g;
+        m_canvasManager.updateGoldText(m_gold);
+    }
+
+    public int getGold() {
+        return m_gold;
     }
 
     public void onTowerPlaced() {
-        towerManager.OnTowerPlaced();
+        m_towerManager.OnTowerPlaced();
+    }
+
+    public void setArrivalScore(int arrivalScore) {
+        m_arrivalScore += arrivalScore;
+        Debug.Log(m_arrivalScore);
+
+        m_canvasManager.setArrivalScoreSlider(m_arrivalScore);
+
+        if (m_arrivalScore >= 10) {
+            Debug.Log("Game Over!!!");
+            restartGame();
+        }
+    }
+
+    public void resetArrivalScore() {
+        m_arrivalScore = 0;
+    }
+
+    public void addEnemy(Enemy enemy) {
+        m_unitManager.addEnemy(enemy);
+    }
+
+    public void removeEnemy(Enemy enemy) {
+        m_unitManager.removeEnemy(enemy);
+    }
+
+    public void addTower(GameObject tower) {
+        m_towerManager.addTower(tower);
+    }
+
+    private void resetGold() {
+        setGold(startingGold);
+    }
+
+    private void destroyAllTowers() {
+        m_towerManager.clearTowers(); 
+    }
+
+    private void destroyAllEnemies() {
+        m_unitManager.clearEnemies();
+    }
+
+    private void resetEnemyArrivalScore() {
+        resetArrivalScore();
+        m_canvasManager.resetArrivalBar();
+    }
+
+    private void restartGame() {
+        resetGold();
+        resetEnemyArrivalScore();      
+        destroyAllEnemies();
+        destroyAllTowers();
     }
 }

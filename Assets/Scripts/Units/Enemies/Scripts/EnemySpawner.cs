@@ -18,6 +18,8 @@ public class EnemySpawner : MonoBehaviour
     }
 
     public void spawnEnemy() {
-        Instantiate(m_enemyPrefab, m_spawnPosition);
+        GameObject enemy = Instantiate(m_enemyPrefab, m_spawnPosition);
+
+        GameManager.instance.addEnemy(enemy.GetComponent<Enemy>());
     }
 }

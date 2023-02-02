@@ -25,6 +25,6 @@ public class Enemy : MonoBehaviour
 
     private void onDeath() {
         GameManager.instance.gainGold(10);
-        Destroy(gameObject);
+        GameManager.instance.removeEnemy(this);
     }
 }
