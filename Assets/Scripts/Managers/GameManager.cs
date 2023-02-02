@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
         m_canvasManager.setArrivalScoreSlider(m_arrivalScore);
 
-        if (m_arrivalScore >= 10) {
+        if (m_arrivalScore >= 100) {
             Debug.Log("Game Over!!!");
             restartGame();
         }
