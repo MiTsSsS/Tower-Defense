@@ -1,3 +1,9 @@
+# Preview
+![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense1.gif)
+  
+![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense2.gif)
+
+
 ![](https://img.shields.io/badge/-Unity-lightgrey?style=for-the-badge&logo=unity) 
 ![](https://img.shields.io/badge/-C%20Sharp-%2303a9f4?style=for-the-badge&logo=csharp)
   
@@ -14,8 +20,3 @@ I made this project because I am interested in the different aspects behind plac
 - Preview tower range before placing it.
 - Timer and Score counter.
 - Gradual increase for the game difficulty based on elapsed time since its start.
-  
-# Preview
-![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense1.gif)
-  
-![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense2.gif)
