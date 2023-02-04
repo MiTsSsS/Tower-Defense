@@ -8,6 +8,11 @@ I made this project because I am interested in the different aspects behind plac
 - Enemy units travel from point A to point B, if they reach point B they will dissapear and the bar in the top middle of the screen will increase.
 - If the bar is filled, the player loses and the game will restart.
   
+# Future Work
+- Preview tower range before placing it.
+- Timer and Score counter.
+- Gradual increase for the game difficulty based on elapsed time since its start.
+  
 # Preview
 ![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense1.gif)
   
