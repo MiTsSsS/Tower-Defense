@@ -1,5 +1,7 @@
+![](https://img.shields.io/badge/-Unity-lightgrey?style=for-the-badge&logo=unity) 
+![](https://img.shields.io/badge/-C%20Sharp-%2303a9f4?style=for-the-badge&logo=csharp)
+  
 # Purpose
-
 I made this project because I am interested in the different aspects behind placing objects in the game world and using NavMesh to make agents navigate their way from point A to point B, I then decided to complete it as a small playable Tower Defense game.
   
 # Gameplay
