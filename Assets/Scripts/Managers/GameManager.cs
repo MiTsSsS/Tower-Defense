@@ -15,14 +15,20 @@ public class GameManager : MonoBehaviour
     private TowerManager m_towerManager;
     [SerializeField]
     private UnitManager m_unitManager;
+    [SerializeField]
+    private Transform m_enemyPathParent;
 
     private int m_arrivalScore = 0;
     private int m_gold;
+    private List<GameObject> m_enemyPathTiles;
 
     private void Start() {
         instance = this;
         setGold(startingGold);
         InvokeRepeating("gainGoldRepeating", 0, 2f);
+
+        m_enemyPathTiles = new List<GameObject>();
+        gatherEnemyPathTiles();
     }
 
     public bool validateBuildingCost(int buildingCost) {
@@ -114,5 +120,21 @@ public class GameManager : MonoBehaviour
         resetEnemyArrivalScore();      
         destroyAllEnemies();
         destroyAllTowers();
+    }
+
+    private void gatherEnemyPathTiles() {
+        var children = m_enemyPathParent.GetComponentInChildren<Transform>(true);
+
+        foreach(Transform enemyPathTile in children) {
+            if(enemyPathTile.gameObject.layer == 7) {
+                m_enemyPathTiles.Add(enemyPathTile.Find("RedZone").gameObject);
+            }
+        }
+    }
+
+    public void toggleRedZone(bool isActive) {
+        foreach(GameObject redZone in m_enemyPathTiles) {
+            redZone.SetActive(isActive);
+        }
     }
 }

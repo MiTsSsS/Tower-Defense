@@ -67,14 +67,17 @@ public class TowerManager : MonoBehaviour
         if (selectedTowerPreview != null && canShowPreview) {
             buildingBlueprint.towerPreview = Instantiate(towerPreview, transform.position, Quaternion.identity);
             canShowPreview = false;
+            GameManager.instance.toggleRedZone(true);
         }
     }
 
     public void OnTowerPlaced() {
         canShowPreview = true;
+        GameManager.instance.toggleRedZone(false);
     }
 
     public void deselectTower() {
+        GameManager.instance.toggleRedZone(false);
         Destroy(buildingBlueprint.towerPreview);
         canShowPreview = true;
     }

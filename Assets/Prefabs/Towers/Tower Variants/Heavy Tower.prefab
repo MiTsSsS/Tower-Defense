@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1289988535690335277, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 95f0c6e9ec82ff545bc115be03608939, type: 2}
     - target: {fileID: 1805557573296722737, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
       propertyPath: m_Name
       value: Heavy Tower
@@ -66,6 +70,10 @@ PrefabInstance:
     - target: {fileID: 5980395859668112504, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524470979119331652, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_Radius
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 9108897276163125021, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
       propertyPath: cost
