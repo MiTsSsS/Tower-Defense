@@ -65,7 +65,10 @@ public class TowerManager : MonoBehaviour
         buildingBlueprint.setSelectedTower(selectedTowerPreview);
 
         if (selectedTowerPreview != null && canShowPreview) {
-            buildingBlueprint.towerPreview = Instantiate(towerPreview, transform.position, Quaternion.identity);
+            GameObject preview = Instantiate(towerPreview, transform.position, Quaternion.identity);
+
+            buildingBlueprint.towerPreview = preview;
+            //preview.gameObject.transform.Find("Tower Range").localScale = new Vector3 (17.882452f, 0.0103540001f, 17.882452f);
             canShowPreview = false;
             GameManager.instance.toggleRedZone(true);
         }
@@ -77,6 +80,7 @@ public class TowerManager : MonoBehaviour
     }
 
     public void deselectTower() {
+        buildingBlueprint.setSelectedTower(null);
         GameManager.instance.toggleRedZone(false);
         Destroy(buildingBlueprint.towerPreview);
         canShowPreview = true;

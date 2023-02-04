@@ -55,6 +55,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.882452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.010354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.882452
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.000000033717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000000067434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5894669361011415936, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942662497850809994, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9108897276163125021, guid: f60811a4ea98fa54096b3f638cbab762, type: 3}
       propertyPath: cost
       value: 20
