@@ -1,3 +1,8 @@
+<a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#preview">Preivew<a>  
+<a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#purpose">Purpose<a>  
+<a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#gameplay">Gameplay<a>  
+<a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#future-work">Future Work<a>  
+
 # Preview
 ![](https://github.com/MiTsSsS/Tower-Defense/blob/main/GitHub/TowerDefense1.gif)
   
