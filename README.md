@@ -3,8 +3,8 @@
   
 | Content |
 |--------------|
-| <a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#preview">Preview<a>  |
 | <a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#purpose">Purpose<a>  |
+| <a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#preview">Preview<a>  |
 | <a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#gameplay">Gameplay<a> |
 | <a href="https://github.com/MiTsSsS/Tower-Defense/edit/main/README.md#future-work">Future Work<a> |
   
